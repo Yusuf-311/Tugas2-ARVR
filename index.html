@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/a-framedc@1.0.7/dist/aframedc.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin:mouse" raycaster="objects:[clickable]">
+      <!-- Assets -->
+
+      <a-link
+        clickable
+        href="env3.html"
+        position="0 1 -7"
+        image="#forest"
+        link-title="Bird Palace"
+      ></a-link>
+
+      <!--Forest Environment-->
+      <a-entity environment="preset: forest; dressingAmount: 100"></a-entity>
+
+      <!--A regular box-->
+      <a-assets>
+        <a-asset-item id="tree" src="asset/model.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-entity gltf-model="#tree"></a-entity>
+
+      <!--Text-->
+      <a-entity
+        text="value: Hello, A-Frame!; color: #BBB"
+        position="-0.8 2 5"
+        scale="5 5 5"
+      ></a-entity>
+    </a-scene>
+  </body>
+</html>
